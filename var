@@ -1,0 +1,27 @@
+import random 
+gameon = True
+iteration = 0;  
+while gameon == True: 
+  end_range = 10+(iteration*5)
+  start_range = 1
+  my_guess = random.randint(start_range,end_range)
+  if iteration == 0:
+    print ("Hello welcome to my guessing game, I am thinking of a number between one and ten!")
+    user_guess = input ("try to guess the number I am thinking of...) ->   ")
+  else:
+    print ("hey you beat me the first time but can you do it again? and this time the number is between 1 and ", 10+(iteration*5))
+    user_guess = input ("try to guess the number I am thinking of, It's a bit harder this time. ->   ")
+    user_guess = int(user_guess)
+  while my_guess != user_guess : 
+    user_guess = input ("guess! -->   " )
+    user_guess = int(user_guess)
+  if user_guess == my_guess:
+     if iteration == 0:    
+      print(" you guessed it right!")
+     else:
+      print(" you guessed it right again? how do you do it?!") 
+  play_again = input("Hey please play the next round, I will beat you now! (yes/no) ->    ")
+  if play_again != "yes":
+   gameon = False
+  else:
+   iteration+=1
